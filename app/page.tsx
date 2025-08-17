@@ -247,7 +247,7 @@ export default function HomePage() {
               </div>
               <div>
                 <h1 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  OmniAvatar
+                  OmniAvataar
                 </h1>
                 <p className="text-xs text-gray-400 -mt-1 hidden lg:block">Next-Gen AI Video</p>
               </div>
@@ -320,10 +320,11 @@ export default function HomePage() {
 
       <section className="pt-24 lg:pt-32 pb-24 lg:pb-32 px-4 lg:px-6 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
+          {/* Hero Content */}
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="space-y-6 lg:space-y-8">
               <div className="space-y-4 lg:space-y-6">
-                <div className="flex justify-center lg:justify-start">
+                <div className="flex justify-center">
                   <div className="px-3 lg:px-4 py-2 bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/30 rounded-full">
                     <span className="text-orange-400 font-medium text-xs lg:text-sm">
                       🚀 3x Faster Than Competition
@@ -341,13 +342,13 @@ export default function HomePage() {
                   </span>
                 </h1>
 
-                <p className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                <p className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
                   Professional talking videos with voice cloning, 75+ languages, and 4K quality.
                   <span className="text-white font-medium"> No studio required.</span>
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/auth/signup">
                   <Button
                     size="lg"
@@ -367,7 +368,7 @@ export default function HomePage() {
                 </Button>
               </div>
 
-              <div className="flex items-center justify-center lg:justify-start space-x-6 lg:space-x-8 pt-4">
+              <div className="flex items-center justify-center space-x-6 lg:space-x-8 pt-4">
                 <div className="text-center">
                   <div className="text-xl lg:text-2xl font-bold text-white">500K+</div>
                   <div className="text-xs lg:text-sm text-gray-400">Videos Created</div>
@@ -382,9 +383,11 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="relative order-first lg:order-last">
-              <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-md mx-auto mb-8 lg:mb-12">
+          {/* Video Cards - Now Prominently Displayed */}
+                      <div className="relative max-w-4xl mx-auto">
+              <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto mb-8 lg:mb-12">
                 {videoCards.map((card, index) => (
                   <div
                     key={index}
@@ -392,14 +395,14 @@ export default function HomePage() {
                       index === activeCard
                         ? "scale-100 opacity-100 z-10 rotate-0"
                         : index === (activeCard + 1) % videoCards.length
-                          ? "scale-90 lg:scale-95 opacity-40 lg:opacity-60 z-5 rotate-2 lg:rotate-3 translate-x-2 lg:translate-x-4"
+                          ? "scale-85 lg:scale-90 opacity-50 lg:opacity-70 z-5 rotate-3 lg:rotate-4 translate-x-4 lg:translate-x-6"
                           : index === (activeCard - 1 + videoCards.length) % videoCards.length
-                            ? "scale-90 lg:scale-95 opacity-40 lg:opacity-60 z-5 -rotate-2 lg:-rotate-3 -translate-x-2 lg:-translate-x-4"
-                            : "scale-85 lg:scale-90 opacity-20 lg:opacity-30 z-0"
+                            ? "scale-85 lg:scale-90 opacity-50 lg:opacity-70 z-5 -rotate-3 lg:-rotate-4 -translate-x-4 lg:-translate-x-6"
+                            : "scale-75 lg:scale-80 opacity-30 lg:opacity-40 z-0"
                     }`}
                     onClick={() => handleCardClick(index)}
                   >
-                    <div className="relative w-full h-full rounded-2xl lg:rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 shadow-2xl shadow-black/50">
+                    <div className="relative w-full h-full rounded-2xl lg:rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 border border-white/20 shadow-2xl shadow-black/50 hover:border-orange-500/30 transition-all duration-300">
                       <img
                         src={card.thumbnailUrl || "/placeholder.svg"}
                         alt={card.title}
@@ -418,8 +421,8 @@ export default function HomePage() {
                       </div>
 
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="bg-white/90 rounded-full w-12 h-12 lg:w-16 lg:h-16 flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-110 active:scale-95">
-                          <Play className="text-black fill-black w-5 h-5 lg:w-6 lg:h-6 ml-0.5 lg:ml-1" />
+                        <div className="bg-white/90 rounded-full w-14 h-14 lg:w-20 lg:h-20 flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-110 active:scale-95 shadow-lg">
+                          <Play className="text-black fill-black w-6 h-6 lg:w-8 lg:h-8 ml-0.5 lg:ml-1" />
                         </div>
                       </div>
 
@@ -442,15 +445,15 @@ export default function HomePage() {
                 ))}
               </div>
 
-              <div className="flex justify-center mt-6 lg:mt-8 gap-2">
+              <div className="flex justify-center mt-8 lg:mt-12 gap-3">
                 {videoCards.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveCard(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       index === activeCard
-                        ? "bg-gradient-to-r from-orange-500 to-red-500 scale-125"
-                        : "bg-white/30 hover:bg-white/50 active:scale-90"
+                        ? "bg-gradient-to-r from-orange-500 to-red-500 scale-150"
+                        : "bg-white/40 hover:bg-white/60 active:scale-90"
                     }`}
                   />
                 ))}

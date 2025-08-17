@@ -12,32 +12,32 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: "OmniAvatar - AI Avatars for Everyone and Everything",
+  title: "OmniAvataar - AI Avatars for Everyone and Everything",
   description:
     "Create stunning AI avatars from photos or descriptions. Generate professional videos with your custom avatars. Transform your content with AI-powered avatar technology.",
   generator: "v0.app",
   keywords: ["AI avatars", "video generation", "artificial intelligence", "content creation", "digital avatars"],
-  authors: [{ name: "OmniAvatar Team" }],
-  creator: "OmniAvatar",
-  publisher: "OmniAvatar",
+  authors: [{ name: "OmniAvataar Team" }],
+  creator: "OmniAvataar",
+  publisher: "OmniAvataar",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://omniavatar.app"),
+  metadataBase: new URL("https://omniavataar.app"),
   openGraph: {
-    title: "OmniAvatar - AI Avatars for Everyone and Everything",
+    title: "OmniAvataar - AI Avatars for Everyone and Everything",
     description:
       "Create stunning AI avatars from photos or descriptions. Generate professional videos with your custom avatars.",
-    url: "https://omniavatar.app",
-    siteName: "OmniAvatar",
+    url: "https://omniavataar.app",
+    siteName: "OmniAvataar",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "OmniAvatar - AI Avatar Generation Platform",
+        alt: "OmniAvataar - AI Avatar Generation Platform",
       },
     ],
     locale: "en_US",
@@ -45,11 +45,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "OmniAvatar - AI Avatars for Everyone and Everything",
+    title: "OmniAvataar - AI Avatars for Everyone and Everything",
     description:
       "Create stunning AI avatars from photos or descriptions. Generate professional videos with your custom avatars.",
     images: ["/og-image.png"],
-    creator: "@omniavatar",
+    creator: "@omniavataar",
   },
   robots: {
     index: true,
