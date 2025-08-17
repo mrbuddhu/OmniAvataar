@@ -1,6 +1,8 @@
 "use client"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
+import { OmniAvataarLogo } from "@/components/ui/omniavataar-logo"
+import { Footer } from "@/components/ui/footer"
 import {
   Play,
   Users,
@@ -239,9 +241,7 @@ export default function HomePage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3 lg:space-x-4">
               <div className="relative group">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl lg:rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                  <Video className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
-                </div>
+                <OmniAvataarLogo size={48} variant="gradient" className="group-hover:scale-110 group-hover:rotate-12 transition-all duration-500" />
                 <div className="absolute -top-1 -right-1 w-3 h-3 lg:w-4 lg:h-4 bg-green-400 rounded-full animate-ping" />
                 <div className="absolute -top-1 -right-1 w-3 h-3 lg:w-4 lg:h-4 bg-green-400 rounded-full" />
               </div>
@@ -617,7 +617,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer className="py-16 lg:py-20 px-4 lg:px-6 border-t border-white/10">
+      {/* CTA Section */}
+      <section className="py-16 lg:py-20 px-4 lg:px-6 border-t border-white/10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 lg:mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6">
@@ -637,20 +638,10 @@ export default function HomePage() {
               </Button>
             </Link>
           </div>
-
-          <div className="border-t border-white/10 pt-6 lg:pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="flex items-center space-x-3">
-                <div className="w-6 h-6 lg:w-8 lg:h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg lg:rounded-xl flex items-center justify-center">
-                  <Video className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
-                </div>
-                <span className="font-bold text-lg lg:text-xl text-white">OmniAvatar</span>
-              </div>
-              <p className="text-gray-400 text-sm text-center md:text-left">© 2024 OmniAvatar. All rights reserved.</p>
-            </div>
-          </div>
         </div>
-      </footer>
+      </section>
+
+      <Footer />
     </div>
   )
 }

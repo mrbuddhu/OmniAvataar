@@ -4,6 +4,7 @@ import type React from "react"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
+import { OmniAvataarLogo } from "@/components/ui/omniavataar-logo"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -83,13 +84,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           <SidebarHeader className="border-b border-border p-6">
             <div className="flex items-center space-x-3">
               <div className="relative">
-                <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                  <Sparkles className="w-4 h-4 text-white" />
-                </div>
+                <OmniAvataarLogo size={32} variant="gradient" />
                 <div className="absolute -top-1 -right-1 w-2 h-2 bg-accent rounded-full animate-pulse" />
               </div>
               <span className="font-sans font-bold text-lg bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
-                OmniAvatar
+                OmniAvataar
               </span>
             </div>
           </SidebarHeader>

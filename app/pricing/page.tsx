@@ -5,13 +5,14 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Switch } from "@/components/ui/switch"
+import { OmniAvataarLogo } from "@/components/ui/omniavataar-logo"
 import { Check, Sparkles, Crown, Zap, ArrowRight, Star } from "lucide-react"
 
 const pricingPlans = [
   {
     id: "free",
     name: "Free",
-    description: "Perfect for trying out OmniAvatar",
+    description: "Perfect for trying out OmniAvataar",
     monthlyPrice: 0,
     yearlyPrice: 0,
     credits: 3,
