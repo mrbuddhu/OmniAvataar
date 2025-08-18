@@ -340,7 +340,7 @@ export default function HomePage() {
         </div>
       </nav>
 
-      <section className="pt-28 lg:pt-32 pb-24 lg:pb-32 px-4 lg:px-6 relative">
+      <section className="pt-28 lg:pt-32 pb-56 lg:pb-32 px-4 lg:px-6 relative">
         <div className="max-w-7xl mx-auto">
           {/* Hero Content - Left Side */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -407,7 +407,7 @@ export default function HomePage() {
             </div>
 
             {/* Video Cards - Right Side */}
-            <div className="relative w-full max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] mx-auto h-20 sm:h-32 lg:h-44 flex items-center justify-center mb-16 sm:mb-0">
+            <div className="relative w-full max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] mx-auto h-20 sm:h-32 lg:h-44 flex items-center justify-center mb-28 sm:mb-0">
               {videoCards.map((card, index) => (
                 <div
                   key={index}
