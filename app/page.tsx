@@ -427,11 +427,23 @@ export default function HomePage() {
                   onClick={() => handleCardClick(index)}
                 >
                   <div className="relative w-full h-full rounded-2xl lg:rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 border border-white/20 shadow-2xl shadow-black/50 hover:border-orange-500/30 transition-all duration-300">
-                    <img
-                      src={card.thumbnailUrl || "/placeholder.svg"}
-                      alt={card.title}
-                      className="w-full h-full object-cover"
-                    />
+                    {card.videoUrl ? (
+                      <video
+                        className="w-full h-full object-cover"
+                        src={card.videoUrl}
+                        poster={card.thumbnailUrl || "/placeholder.svg"}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                      />
+                    ) : (
+                      <img
+                        src={card.thumbnailUrl || "/placeholder.svg"}
+                        alt={card.title}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
