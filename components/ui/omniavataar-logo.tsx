@@ -32,7 +32,7 @@ export function OmniAvataarLogo({
         {/* Vase shape (white space) */}
         <path 
           d="M24 8C20 8 16 10 16 14V20C16 24 20 28 24 32C28 28 32 24 32 20V14C32 10 28 8 24 8Z" 
-          fill={variant === 'gradient' ? 'url(#gradient)' : 'white'}
+          fill="white"
         />
         
         {/* Left face profile */}
@@ -58,22 +58,12 @@ export function OmniAvataarLogo({
         {/* Vase details */}
         <path 
           d="M20 32C22 30 24 28 26 30C24 32 22 34 20 32Z" 
-          fill={variant === 'gradient' ? 'url(#gradient)' : 'white'}
+          fill="white"
         />
         <path 
           d="M22 34C24 32 26 30 28 32C26 34 24 36 22 34Z" 
-          fill={variant === 'gradient' ? 'url(#gradient)' : 'white'}
+          fill="white"
         />
-        
-        {/* Gradient definition for gradient variant */}
-        {variant === 'gradient' && (
-          <defs>
-            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#f97316" />
-              <stop offset="100%" stopColor="#dc2626" />
-            </linearGradient>
-          </defs>
-        )}
       </svg>
     </div>
   )

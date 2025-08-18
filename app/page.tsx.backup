@@ -1,7 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { OmniAvataarLogo } from "@/components/ui/omniavataar-logo"
 import { Footer } from "@/components/ui/footer"
 import {
   Play,
@@ -79,28 +78,6 @@ const videoCards = [
     views: "9.8K",
     likes: "1.1K",
     category: "Marketing",
-    isNew: false,
-  },
-  {
-    id: 6,
-    title: "Tech Review",
-    description: "Expert AI avatar for technology reviews",
-    thumbnailUrl: "/tech-reviewer-avatar.png",
-    duration: "4:15",
-    views: "18.9K",
-    likes: "2.1K",
-    category: "Technology",
-    isNew: true,
-  },
-  {
-    id: 7,
-    title: "Fitness Coach",
-    description: "Motivational AI avatar for fitness content",
-    thumbnailUrl: "/fitness-coach-avatar.png",
-    duration: "2:22",
-    views: "14.3K",
-    likes: "1.6K",
-    category: "Fitness",
     isNew: false,
   },
 ]
@@ -263,7 +240,9 @@ export default function HomePage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3 lg:space-x-4">
               <div className="relative group">
-                <OmniAvataarLogo size={48} variant="gradient" className="group-hover:scale-110 group-hover:rotate-12 transition-all duration-500" />
+                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl lg:rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                  <Video className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
+                </div>
                 <div className="absolute -top-1 -right-1 w-3 h-3 lg:w-4 lg:h-4 bg-green-400 rounded-full animate-ping" />
                 <div className="absolute -top-1 -right-1 w-3 h-3 lg:w-4 lg:h-4 bg-green-400 rounded-full" />
               </div>
@@ -340,13 +319,13 @@ export default function HomePage() {
         </div>
       </nav>
 
-      <section className="pt-28 lg:pt-32 pb-24 lg:pb-32 px-4 lg:px-6 relative">
+      <section className="pt-24 lg:pt-32 pb-24 lg:pb-32 px-4 lg:px-6 relative">
         <div className="max-w-7xl mx-auto">
-          {/* Hero Content - Left Side */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <div className="space-y-8 lg:space-y-10 text-center lg:text-left pt-4 lg:pt-6">
+          {/* Hero Content */}
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="space-y-6 lg:space-y-8">
               <div className="space-y-4 lg:space-y-6">
-                <div className="flex justify-center lg:justify-start">
+                <div className="flex justify-center">
                   <div className="px-3 lg:px-4 py-2 bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/30 rounded-full">
                     <span className="text-orange-400 font-medium text-xs lg:text-sm">
                       🚀 3x Faster Than Competition
@@ -356,21 +335,21 @@ export default function HomePage() {
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                   <span className="bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
-                    AI Avatar for Everyone
+                    Create AI Videos
                   </span>
                   <br />
                   <span className="bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent">
-                    and Everything
+                    In 60 Seconds
                   </span>
                 </h1>
 
-                <p className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl lg:max-w-none mx-auto lg:mx-0">
-                  Create professional AI videos in 60 seconds with voice cloning, 75+ languages, and 4K quality.
+                <p className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+                  Professional talking videos with voice cloning, 75+ languages, and 4K quality.
                   <span className="text-white font-medium"> No studio required.</span>
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/auth/signup">
                   <Button
                     size="lg"
@@ -390,86 +369,97 @@ export default function HomePage() {
                 </Button>
               </div>
 
-              <div className="flex items-center justify-center lg:justify-start space-x-6 lg:space-x-8 pt-4">
-                <div className="text-center lg:text-left">
+              <div className="flex items-center justify-center space-x-6 lg:space-x-8 pt-4">
+                <div className="text-center">
                   <div className="text-xl lg:text-2xl font-bold text-white">500K+</div>
                   <div className="text-xs lg:text-sm text-gray-400">Videos Created</div>
                 </div>
-                <div className="text-center lg:text-left">
+                <div className="text-center">
                   <div className="text-xl lg:text-2xl font-bold text-white">75+</div>
                   <div className="text-xs lg:text-sm text-gray-400">Languages</div>
                 </div>
-                <div className="text-center lg:text-left">
+                <div className="text-center">
                   <div className="text-xl lg:text-2xl font-bold text-white">60s</div>
                   <div className="text-xs lg:text-sm text-gray-400">Generation Time</div>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Video Cards - Right Side */}
-            <div className="relative w-full max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] mx-auto h-20 sm:h-32 lg:h-44 flex items-center justify-center mb-16 sm:mb-0">
-              {videoCards.map((card, index) => (
-                <div
-                  key={index}
-                  className={`absolute inset-0 w-full aspect-[9/16] cursor-pointer transition-all duration-700 ease-out ${
-                    index === activeCard
-                      ? "scale-100 opacity-100 z-10 rotate-0"
-                      : index === (activeCard + 1) % videoCards.length
-                        ? "scale-65 sm:scale-85 lg:scale-90 opacity-40 lg:opacity-60 z-5 rotate-1 sm:rotate-2 lg:rotate-2 translate-x-1 sm:translate-x-6 lg:translate-x-8"
-                      : index === (activeCard + 2) % videoCards.length
-                        ? "scale-55 sm:scale-75 lg:scale-80 opacity-30 lg:opacity-50 z-4 rotate-1 sm:rotate-3 lg:rotate-3 translate-x-2 sm:translate-x-12 lg:translate-x-16"
-                      : index === (activeCard - 1 + videoCards.length) % videoCards.length
-                        ? "scale-65 sm:scale-85 lg:scale-90 opacity-40 lg:opacity-60 z-5 -rotate-1 sm:-rotate-2 lg:-rotate-2 -translate-x-1 sm:-translate-x-6 lg:-translate-x-8"
-                      : index === (activeCard - 2 + videoCards.length) % videoCards.length
-                        ? "scale-55 sm:scale-75 lg:scale-80 opacity-30 lg:opacity-50 z-4 -rotate-1 sm:-rotate-3 lg:-rotate-3 -translate-x-2 sm:-translate-x-12 lg:-translate-x-16"
-                          : "scale-45 sm:scale-65 lg:scale-70 opacity-20 lg:opacity-30 z-0"
-                  }`}
-                  onClick={() => handleCardClick(index)}
-                >
-                  <div className="relative w-full h-full rounded-2xl lg:rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 border border-white/20 shadow-2xl shadow-black/50 hover:border-orange-500/30 transition-all duration-300">
-                    <img
-                      src={card.thumbnailUrl || "/placeholder.svg"}
-                      alt={card.title}
-                      className="w-full h-full object-cover"
-                    />
+          {/* Video Cards - Now Prominently Displayed */}
+          <div className="relative max-w-4xl mx-auto">
+            <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto mb-8 lg:mb-12">
+                {videoCards.map((card, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 w-full aspect-[9/16] cursor-pointer transition-all duration-700 ease-out ${
+                      index === activeCard
+                        ? "scale-100 opacity-100 z-10 rotate-0"
+                        : index === (activeCard + 1) % videoCards.length
+                          ? "scale-85 lg:scale-90 opacity-50 lg:opacity-70 z-5 rotate-3 lg:rotate-4 translate-x-4 lg:translate-x-6"
+                          : index === (activeCard - 1 + videoCards.length) % videoCards.length
+                            ? "scale-85 lg:scale-90 opacity-50 lg:opacity-70 z-5 -rotate-3 lg:-rotate-4 -translate-x-4 lg:-translate-x-6"
+                            : "scale-75 lg:scale-80 opacity-30 lg:opacity-40 z-0"
+                    }`}
+                    onClick={() => handleCardClick(index)}
+                  >
+                    <div className="relative w-full h-full rounded-2xl lg:rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 border border-white/20 shadow-2xl shadow-black/50 hover:border-orange-500/30 transition-all duration-300">
+                      <img
+                        src={card.thumbnailUrl || "/placeholder.svg"}
+                        alt={card.title}
+                        className="w-full h-full object-cover"
+                      />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
-                    <div className="absolute top-3 lg:top-4 left-3 lg:left-4 right-3 lg:right-4 flex justify-between">
-                      <div className="bg-white/90 text-black px-2 lg:px-3 py-1 rounded-full text-xs font-medium">
-                        {card.category}
+                      <div className="absolute top-3 lg:top-4 left-3 lg:left-4 right-3 lg:right-4 flex justify-between">
+                        <div className="bg-white/90 text-black px-2 lg:px-3 py-1 rounded-full text-xs font-medium">
+                          {card.category}
+                        </div>
+                        <div className="bg-black/60 text-white px-2 lg:px-3 py-1 rounded-full text-xs font-medium">
+                          {card.duration}
+                        </div>
                       </div>
-                      <div className="bg-black/60 text-white px-2 lg:px-3 py-1 rounded-full text-xs font-medium">
-                        {card.duration}
-                      </div>
-                    </div>
 
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-white/90 rounded-full w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-110 active:scale-95 shadow-lg">
-                        <Play className="text-black fill-black w-4 h-4 lg:w-5 lg:h-5 ml-0.5 lg:ml-1" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="bg-white/90 rounded-full w-14 h-14 lg:w-20 lg:h-20 flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-110 active:scale-95 shadow-lg">
+                          <Play className="text-black fill-black w-6 h-6 lg:w-8 lg:h-8 ml-0.5 lg:ml-1" />
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6">
-                      <h3 className="font-bold text-white text-base lg:text-lg mb-2 lg:mb-4">{card.title}</h3>
-                      <p className="text-white/80 text-sm mb-3 line-clamp-2">{card.description}</p>
-                      <div className="flex items-center gap-3 lg:gap-4 text-sm text-white/70">
-                        <span className="flex items-center gap-1">
-                          <Eye className="w-3 h-3 lg:w-4 lg:h-4" />
-                          {card.views}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Heart className="w-3 h-3 lg:w-4 lg:h-4" />
-                          {card.likes}
-                        </span>
+                      <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6">
+                        <h3 className="font-bold text-white text-base lg:text-lg mb-2 lg:mb-4">{card.title}</h3>
+                        <p className="text-white/80 text-sm mb-3 line-clamp-2">{card.description}</p>
+                        <div className="flex items-center gap-3 lg:gap-4 text-sm text-white/70">
+                          <span className="flex items-center gap-1">
+                            <Eye className="w-3 h-3 lg:w-4 lg:h-4" />
+                            {card.views}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Heart className="w-3 h-3 lg:w-4 lg:h-4" />
+                            {card.likes}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              <div className="flex justify-center mt-8 lg:mt-12 gap-3">
+                {videoCards.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveCard(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === activeCard
+                        ? "bg-gradient-to-r from-orange-500 to-red-500 scale-150"
+                        : "bg-white/40 hover:bg-white/60 active:scale-90"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
-
-
           </div>
         </div>
       </section>
